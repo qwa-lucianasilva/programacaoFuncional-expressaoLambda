@@ -3,7 +3,7 @@ package entities;
 public class Products {
 
 	private String name;
-	private static Double price;
+	private Double price;
 	
 	public Products() {
 	}
@@ -27,14 +27,6 @@ public class Products {
 
 	public void setPrice(Double price) {
 		this.price = price;
-	}
-	
-	public static boolean staticProductPredicate() {
-		return price >= 100.0;
-	}
-
-	public static boolean nonstaticProductPredicate() {
-		return price >= 100.0;
 	}
 	
 	@Override
