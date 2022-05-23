@@ -1,23 +1,26 @@
 package application;
 
-import java.util.Arrays;
+import java.util.ArrayList;
+import java.util.List;
+
+import entities.Products;
 
 public class Program {
 	
-	public static int globalValue = 3;
+	public static int compareProducts(Products p1, Products p2) {
+		return p1.getPrice().compareTo(p2.getPrice());
+	}
 
 	public static void main(String[] args) {
 		
-		int[] vect = new int[] { 3, 4, 5 };
-		changeOddValues(vect);
-		System.out.println(Arrays.toString(vect));
-	}
-
-	public static void changeOddValues(int[] numbers) {
-		for (int i = 0; i < numbers.length; i++) {
-			if (numbers[i] % 2 != 0) {
-				numbers[i] += globalValue;
-			}
-		}
+		List<Products> list = new ArrayList<>();
+		
+		list.add(new Products("TV", 900.00));
+		list.add(new Products("Notebook", 1200.00));
+		list.add(new Products("Tablet", 450.00));
+		
+		list.sort(Program::compareProducts);
+		list.forEach(System.out::println);
+	
 	}
 }
