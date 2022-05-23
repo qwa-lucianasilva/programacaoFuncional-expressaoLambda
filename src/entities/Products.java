@@ -29,6 +29,14 @@ public class Products {
 		this.price = price;
 	}
 	
+	public static void staticPriceUpdate(Products p) {
+		p.setPrice(p.getPrice() * 1.1);
+	}
+	
+	public void nonstaticPriceUpdate() {
+		price = price * 1.1;
+	}
+	
 	@Override
 	public String toString() {
 		return name + ", " + String.format("%.2f", price);
