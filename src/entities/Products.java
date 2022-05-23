@@ -29,16 +29,12 @@ public class Products {
 		this.price = price;
 	}
 	
-	public static void staticPriceUpdate(Products p) {
-		p.setPrice(p.getPrice() * 1.1);
-	}
-	
-	public void nonstaticPriceUpdate() {
-		price = price * 1.1;
-	}
-	
 	public static String staticUpperCaseName(Products p) {
 		return p.getName().toUpperCase();
+	}
+	
+	public String nonStaticUpperCaseName() {
+		return name.toUpperCase();
 	}
 	
 	@Override
