@@ -17,7 +17,9 @@ public class Program {
 		list.add(new Products("Tablet", 350.50));
 		list.add(new Products("HD Case", 80.90));
 		
-		list.removeIf(Products::staticProductPredicate);
+		double min = 100.0;
+		
+		list.removeIf(p -> p.getPrice() >= min);
 		
 		for (Products p : list) {
 			System.out.println(p);
